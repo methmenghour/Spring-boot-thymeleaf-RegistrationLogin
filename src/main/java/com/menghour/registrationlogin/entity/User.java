@@ -29,7 +29,7 @@ public class User {
 	 @Column(name = "LAST_NAME")
 	 private String lastName;
 	 
-	 @Column(name = "GENDER")
+	 @Column(name = "GENDER",length =1)
 	 private Character gender;
 	 
 	 
