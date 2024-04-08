@@ -2,8 +2,7 @@ package com.menghour.registrationlogin.Dto;
 
 import java.time.LocalDateTime;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.menghour.registrationlogin.config.customconstraint.ValidDateTimePattern;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -23,14 +22,11 @@ public class UserDTO {
 	 @Pattern(regexp="M|m|F|f",message = "gender contain Charater M,m,F,f")
 	 private String gender;
 	 
-	 //@JsonIgnore
 	 @Pattern(regexp="^\\+?[\\d\\s?]+",message = "invalid Phone number entered ")
 	 private String phoneNumber ;
 	 
-	 @ValidDateTimePattern // must add create (@RequestBody @Valid  UserDTO userDTO)
-	 private String inputDate;
-	 
-	 @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-	 private LocalDateTime createDate;
+	// @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	 private LocalDateTime inputDate;
 	 
 }
